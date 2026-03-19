@@ -12,13 +12,13 @@ Multiparts:		<none>
 Body:
 {
     "accuracy": 50,
-    "address": "29, side layout, cohen 09",
-    "language": "French-IN",
+    "address": "Mumbai",
+    "language": "<language>",
     "location": {
         "lat": -38.383494,
         "lng": 33.427362
     },
-    "name": "Frontline house",
+    "name": "Aniket",
     "phone_number": "(+91) 983 893 3937",
     "types": [
         "shoe park",
@@ -27,7 +27,7 @@ Body:
     "website": "https://rahulshettyacademy.com"
 }
 HTTP/1.1 200 OK
-Date: Thu, 19 Mar 2026 19:49:05 GMT
+Date: Thu, 19 Mar 2026 20:15:56 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Strict-Transport-Security: max-age=604800; includeSubDomains
 Access-Control-Allow-Origin: *
@@ -41,8 +41,8 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "a94888cec65bd8f9a66d3984f4d7c766",
+    "place_id": "300a029ac7f2f27b598dc268ec813649",
     "scope": "APP",
-    "reference": "61ada37c50feab76658709438cf2ddf461ada37c50feab76658709438cf2ddf4",
-    "id": "61ada37c50feab76658709438cf2ddf4"
+    "reference": "98911e33577dd96aa547ad8071cb488798911e33577dd96aa547ad8071cb4887",
+    "id": "98911e33577dd96aa547ad8071cb4887"
 }
