@@ -27,7 +27,7 @@ Body:
     "website": "https://rahulshettyacademy.com"
 }
 HTTP/1.1 200 OK
-Date: Thu, 19 Mar 2026 18:43:53 GMT
+Date: Thu, 19 Mar 2026 19:49:05 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Strict-Transport-Security: max-age=604800; includeSubDomains
 Access-Control-Allow-Origin: *
@@ -41,8 +41,8 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "d5cc99d7ad6528843537054b326d709c",
+    "place_id": "a94888cec65bd8f9a66d3984f4d7c766",
     "scope": "APP",
-    "reference": "6ce68327798ea0357ef510279ade00556ce68327798ea0357ef510279ade0055",
-    "id": "6ce68327798ea0357ef510279ade0055"
+    "reference": "61ada37c50feab76658709438cf2ddf461ada37c50feab76658709438cf2ddf4",
+    "id": "61ada37c50feab76658709438cf2ddf4"
 }
