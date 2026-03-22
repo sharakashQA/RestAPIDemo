@@ -1,4 +1,5 @@
 package resources;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -13,29 +14,29 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
 public class Utils {
+// To create single copy of request specification and use it across all the test cases
+	public static RequestSpecification req;
 
-	RequestSpecification req;
-	
-	public RequestSpecification requestSpecification () throws IOException {
-		
-		PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
-	
-		req = new RequestSpecBuilder().setBaseUri(getGlobalValues("baseUrl"))
-				.addQueryParam("key", "qaclick123")
-				.addFilter(RequestLoggingFilter.logRequestTo(log))
-				.addFilter(ResponseLoggingFilter.logResponseTo(log))
-				.setContentType(ContentType.JSON).build();
-		
+	public RequestSpecification requestSpecification() throws IOException {
+
+		if (req == null) {
+
+			PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
+
+			req = new RequestSpecBuilder().setBaseUri(getGlobalValues("baseUrl")).addQueryParam("key", "qaclick123")
+					.addFilter(RequestLoggingFilter.logRequestTo(log))
+					.addFilter(ResponseLoggingFilter.logResponseTo(log)).setContentType(ContentType.JSON).build();
+
+			return req;
+		}
 		return req;
 	}
-	
-	public static String getGlobalValues(String key) throws IOException  {
+
+	public static String getGlobalValues(String key) throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream("src/test/java/resources/global.properties");
 		prop.load(fis);
 		return prop.getProperty(key);
 	}
-	
-	
-}
 
+}
