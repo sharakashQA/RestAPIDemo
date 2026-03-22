@@ -50,6 +50,7 @@ public class StepDefinations extends Utils {
 		resspec = new ResponseSpecBuilder().expectStatusCode(200)
 				.expectContentType(ContentType.JSON).build();
 		
+		
 		 if(method.equalsIgnoreCase("POST"))
 	    response = res.when().post(resourceAPI.getResource());
 		 else if(method.equalsIgnoreCase("GET"))
@@ -65,6 +66,7 @@ public class StepDefinations extends Utils {
 	public void in_response_body_is(String keyValue, String ExpectedValue) {
 		String resp = response.asString();
 		JsonPath js = new JsonPath(resp);
+		System.out.println(js.get(keyValue).toString());
 		assertEquals(js.get(keyValue).toString(), ExpectedValue);
 		
 		
