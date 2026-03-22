@@ -20,6 +20,7 @@ import io.restassured.specification.ResponseSpecification;
 import io.restassured.response.Response;
 import pojo.AddPlace;
 import pojo.Location;
+import resources.APIresources;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -38,12 +39,22 @@ public class StepDefinations extends Utils {
 		
 	}
 	
-	@When("User calls {string} with POST http request")
-	public void user_calls_with_post_http_request(String string) {
+	 @When("User calls {string} with {string} http request")
+	 public void user_calls_with_http_request(String resource, String method) {
+		 
+		 //Constructor will be called with value of resource which you pass from feature file
+		APIresources resourceAPI=APIresources.valueOf(resource);
+		System.out.println(resourceAPI.getResource());
+		
+		
 		resspec = new ResponseSpecBuilder().expectStatusCode(200)
 				.expectContentType(ContentType.JSON).build();
-	    response = res.when().post("/maps/api/place/add/json").
-	    			then().spec(resspec).extract().response();
+		
+		 if(method.equalsIgnoreCase("POST"))
+	    response = res.when().post(resourceAPI.getResource());
+		 else if(method.equalsIgnoreCase("GET"))
+			 response = res.when().get(resourceAPI.getResource());
+	    			
 	}
 	
 	@Then("API call got success with status code {int}")
