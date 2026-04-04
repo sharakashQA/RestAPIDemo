@@ -1,5 +1,5 @@
 Feature:Validating Place API's	
-
+@AddPlace
 Scenario Outline:: Verify if place is being Succesfully added using AddPlaceAPI
     Given Add Place Payload with "<name>" "<language>" "<address>"
     When User calls "AddPlaceAPI" with "POST" http request
@@ -13,6 +13,7 @@ Examples:
 | Akash | English  | Pune    |
 #| Aniket| Marathi  | Mumbai  |
 
+@DeletePlace
 Scenario: Verify if Delete functionality is working
 
 	Given DeletPlace Payload
