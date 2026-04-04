@@ -33,7 +33,7 @@ public class Utils {
 		}
 		return req;
 	}
-
+	
 	public static String getGlobalValues(String key) throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream("src/test/java/resources/global.properties");
